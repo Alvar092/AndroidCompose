@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -88,7 +89,7 @@ fun RowColumnEx(modifier: Modifier = Modifier) {
     ) {
 
         Row(Modifier
-            .height(120.dp)
+            .height(140.dp)
             .fillMaxWidth()
             , horizontalArrangement = Arrangement.End
         ) {
@@ -99,7 +100,7 @@ fun RowColumnEx(modifier: Modifier = Modifier) {
             )
 
             Box(Modifier
-                    .size(80.dp)
+                    .size(90.dp)
                     .background(Color.Red)
                     .align(Alignment.CenterVertically)
             )
@@ -168,71 +169,113 @@ fun RowColumnEx(modifier: Modifier = Modifier) {
             )
         }
 
-        Row (Modifier.fillMaxWidth(),Arrangement.SpaceEvenly){
-            Column {
+        Row (Modifier.fillMaxWidth()){
+            Column (modifier = Modifier.weight(1f)) {
                 Row(Modifier.weight(1f)) {
                     Box(Modifier
-                        .height(40.dp)
-                        .weight(1.5f)
-                        .background(Color.Blue)
-                    )
-                    Box(Modifier
-                        .height(40.dp)
                         .weight(1f)
-                        .background(Color.White)
-                    )
-                    Box(Modifier
-                        .height(40.dp)
-                        .weight(1f)
-                        .background(Color.Red)
-                    )
-                    Box(Modifier
-                        .height(40.dp)
-                        .weight(1f)
-                        .background(Color.Yellow)
-                    )
-                }
+                        .fillMaxHeight()
+                        .background(Color.Blue))
 
-                Row(Modifier.weight(1f)) {
-
-                }
-
-                Row(Modifier.weight(1f)) {
-
-                }
-            }
-
-            Column {
-                Row (Modifier.fillMaxWidth(),Arrangement.SpaceEvenly) {
-                    Box(Modifier
-                        .height(40.dp)
-                        .weight(1f)
-                        .background(Color.Cyan)
-                    )
-
-                    Column (Modifier
-                        .fillMaxWidth()
-                        .weight(1f)
-
+                    Row(Modifier
+                        .weight(2f)
+                        .fillMaxHeight()
                     ) {
                         Box(Modifier
-                            .background(Color.Blue)
-                            .size(40.dp)
-                        )
+                            .weight(1f)
+                            .fillMaxHeight()
+                            .background(Color.White))
+
                         Box(Modifier
-                            .background(Color.Red)
-                            .size(40.dp)
-                        )
+                            .weight(1f)
+                            .fillMaxHeight()
+                            .background(Color.Red))
+
                         Box(Modifier
-                            .background(Color.Yellow)
-                            .size(40.dp)
-                        )
+                            .weight(1f)
+                            .fillMaxHeight()
+                            .background(Color.Yellow))
                     }
                 }
 
-            }
-        }
+                Row(Modifier.weight(1f)) {
+                    Box(
+                        Modifier
+                            .weight(1f)
+                            .fillMaxHeight()
+                            .background(Color.Blue)
+                    )
+                    Row(
+                        Modifier
+                            .weight(2f)
+                            .fillMaxHeight()
+                            .background(Color.Green)) {
 
+                    }
+                }
+
+                Row(Modifier.weight(1f)) {
+                    Box(Modifier.fillMaxSize().background(Color.Yellow))
+                }
+            }
+
+            Column(Modifier.weight(1f)) {
+                Row(Modifier.weight(1f)) {
+                    Box(Modifier
+                        .weight(1f)
+                        .fillMaxHeight()
+                        .background(Color.Cyan))
+
+                    Column(Modifier.weight(1f)
+                        .fillMaxHeight()) {
+                        Box(Modifier
+                            .weight(1f)
+                            .fillMaxSize()
+                            .background(Color.Blue))
+                        Box(Modifier
+                            .weight(1f)
+                            .fillMaxSize()
+                            .background(Color.Red))
+                        Box(Modifier
+                            .weight(1f)
+                            .fillMaxSize()
+                            .background(Color.Yellow))
+                    }
+
+                    Column(Modifier.weight(1f)
+                        .fillMaxHeight()) {
+                        Box(Modifier
+                            .weight(1f)
+                            .fillMaxSize()
+                            .background(Color.Blue))
+                        Box(Modifier
+                            .weight(1f)
+                            .fillMaxSize()
+                            .background(Color.Red))
+
+                    }
+
+
+                }
+
+                Row(Modifier.weight(1f)) {
+                    Box(Modifier
+                        .weight(2f)
+                        .fillMaxSize()
+                        .background(Color.White))
+                   Row(Modifier
+                        .weight(1f)
+                        .fillMaxHeight()
+                        .background(Color.Red)){
+
+                   }
+                }
+                Row(Modifier.weight(1f)) {
+                    Box(Modifier.fillMaxSize().background(Color.Black))
+                }
+            }
+
+        }
     }
 }
 
