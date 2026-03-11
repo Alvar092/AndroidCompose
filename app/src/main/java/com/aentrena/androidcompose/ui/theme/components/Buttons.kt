@@ -1,8 +1,7 @@
-package com.aentrena.androidcompose
+package com.aentrena.androidcompose.ui.theme.components
 
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button

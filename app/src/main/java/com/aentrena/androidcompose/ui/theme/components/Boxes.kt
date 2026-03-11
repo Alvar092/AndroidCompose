@@ -1,6 +1,5 @@
-package com.aentrena.androidcompose
+package com.aentrena.androidcompose.ui.theme.components
 
-import android.graphics.Paint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight

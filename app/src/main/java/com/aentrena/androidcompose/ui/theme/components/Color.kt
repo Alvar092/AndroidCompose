@@ -1,4 +1,4 @@
-package com.aentrena.androidcompose.ui.theme
+package com.aentrena.androidcompose.ui.theme.components
 
 import androidx.compose.ui.graphics.Color
 

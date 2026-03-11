@@ -1,4 +1,4 @@
-package com.aentrena.androidcompose
+package com.aentrena.androidcompose.ui.theme.components
 
 import androidx.compose.foundation.background
 import androidx.compose.material3.MaterialTheme

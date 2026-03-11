@@ -1,5 +1,6 @@
-package com.aentrena.androidcompose
+package com.aentrena.androidcompose.ui.theme.components
 
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -26,7 +27,8 @@ fun MyTextField() {
             Text("First name")
         },
         maxLines = 2,
-        singleLine = true
+        singleLine = true,
+        keyboardOptions = KeyboardOptions()
     )
 }
 
