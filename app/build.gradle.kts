@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.dagger.hilt.android")
     id("kotlin-kapt")
 }
 
@@ -50,7 +51,7 @@ dependencies {
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.material3:material3:1.2.0")
     implementation("androidx.compose.material:material:1.6.0")
     implementation("androidx.compose.material:material-icons-extended:1.4.3")
 
@@ -67,8 +68,10 @@ dependencies {
     kapt("androidx.room:room-compiler:2.5.1")
 
     // Dagger Hilt
-    implementation("com.google.dagger:hilt-android:2.46.1")
-    kapt("com.google.dagger:hilt-compiler:2.46.1")
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-compiler:2.51.1")
+
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 
     // Room
     implementation("androidx.room:room-runtime:2.5.1")

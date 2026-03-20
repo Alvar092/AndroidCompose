@@ -1,6 +1,7 @@
 package com.aentrena.androidcompose
 
 import android.util.Log
+import androidx.annotation.OptIn
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -15,8 +16,10 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -32,9 +35,12 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun EjercicioLogin() {
 
@@ -90,22 +96,31 @@ fun EjercicioLogin() {
     }
 }
 
+
 @Composable
 fun CustomTextField(placeholder: String, value: String, isPassword: Boolean, icon: ImageVector, onValueChange: (String)-> Unit) {
 
-    TextField(
+    androidx.compose.material.TextField(
         value = value,
         onValueChange = {onValueChange(it)},
         label = {
-        Text(text = placeholder)
+            Text(text = placeholder)
         },
-        leadingIcon =  { Icon(imageVector = icon, contentDescription = "Custom icon")},
-        trailingIcon = { if(isPassword) Icon(imageVector = Icons.Filled.Lock, contentDescription = "Custom icon")},
+        leadingIcon =  {
+            Icon(imageVector = icon, contentDescription = null)
+        },
+        trailingIcon = {
+            if(isPassword) {
+                Icon(imageVector = Icons.Filled.Lock, contentDescription = "Custom icon")
+            }
+        },
+        visualTransformation = if(isPassword) PasswordVisualTransformation() else VisualTransformation.None,
         keyboardOptions = KeyboardOptions(
             keyboardType = if (isPassword) KeyboardType.Password else KeyboardType.Text,
-            capitalization = KeyboardCapitalization.None
+            capitalization = KeyboardCapitalization.None,
+            autoCorrect = false
         ),
-        )
+    )
 }
 
 @Composable

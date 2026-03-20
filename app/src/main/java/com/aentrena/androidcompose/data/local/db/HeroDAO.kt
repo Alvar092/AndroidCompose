@@ -1,4 +1,8 @@
 package com.aentrena.androidcompose.data.local.db
 
-class HeroDAO {
+import androidx.room.Dao
+
+@Dao
+interface HeroDAO {
+    
 }
