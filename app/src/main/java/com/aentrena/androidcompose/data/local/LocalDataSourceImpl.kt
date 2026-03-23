@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 data class LocalDataSourceImpl @Inject constructor(private val dao: HeroDAO): LocalDataSource {
-   /* override suspend fun getHeros(): List<HeroLocal> {
+   override suspend fun getHeros(): List<HeroLocal> {
         return dao.getHeros()
     }
 
@@ -16,5 +16,5 @@ data class LocalDataSourceImpl @Inject constructor(private val dao: HeroDAO): Lo
 
     override suspend fun insertHeros(heros: List<HeroLocal>) {
         dao.insertHeros(heros)
-    } */
+    }
 }
